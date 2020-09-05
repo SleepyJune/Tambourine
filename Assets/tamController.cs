@@ -26,7 +26,8 @@ public class tamController : MonoBehaviour
     {
         if (Input.acceleration.sqrMagnitude >= sqrShakeDetectionThreshold
                    && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
-        {            
+        {
+            audioSource.PlayOneShot(tapSound);
             timeSinceLastShake = Time.unscaledTime;
         }
     }
